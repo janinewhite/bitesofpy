@@ -1,5 +1,5 @@
-games_won = dict(sara=0, bob=1, tim=5, julian=3, jim=1)
-
+#games_won = dict(sara=0, bob=1, tim=5, julian=3, jim=1)
+games_won = [{"name":"sara","wins":0},{"name":"bob","wins":1},{"name":"tim","wins":3},{"name":"jim","wins":1})]
 
 def print_game_stats(games_won=games_won):
     """Loop through games_won's dict (key, value) pairs (dict.items)
@@ -18,3 +18,7 @@ def print_game_stats(games_won=games_won):
         so no sorting is required for this Bite.)
     """
     pass
+for person in games_won:
+    name = person["name"]
+    wins = int(person["wins"])
+    print(f'{name} has won {str(wins)} game{"" if wins==1 else "s"}')
