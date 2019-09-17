@@ -31,4 +31,4 @@ def slice_and_dice(text: str = text) -> list:
       results.append(last_word)
   return(results)
 
-print(slice_and_dice(text))
+#print(slice_and_dice(text))
