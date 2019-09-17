@@ -27,8 +27,8 @@ def slice_and_dice(text: str = text) -> list:
       len_word = len(last_word)
       last_char = last_word[len_word-1]
       if last_char=="." or last_char=="!":
-        last_word = last_word[0:(len_word-2)]
+        last_word = last_word[0:(len_word-1)]
       results.append(last_word)
   return(results)
 
-#print(slice_and_dice(text))
+print(slice_and_dice(text))
