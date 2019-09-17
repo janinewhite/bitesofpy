@@ -18,16 +18,23 @@ keep enjoying our bites!
 def slice_and_dice(text: str = text) -> list:
   results = []
   words = []
+  stripped = ""
   lowercase_letters = "abcdefghijklmnopqrstuvwxyz"
-  text = text.lstrip()
   for line in text.splitlines():
-    lower_line = line.lower()
-    if line[0] in lowercase_letters:
-      words = line.split()
-      last_word = words[len(words)-1]
-      if last_word[-1:]=="." or last_word[-1:]=="!":
-        last_word = last_word[0:(len(last_word)-1)]
-      results.append(last_word)
+    stripped = line.lstrip()
+    first_line_char = stripped[:1]
+    #print(f"Stripped: {stripped}, First Char:{first_line_char}")
+    if first_line_char in lowercase_letters:
+      words = stripped.split()
+      last_index = len(words)-1
+      last_word = ''.join(words[last_index:])
+      len_last_word = len(last_word)
+      last_letter = last_word[-1:]
+      #print(f"Last Word: {last_word}, Last letter: {last_letter}")
+      if last_word.endswith(".") or last_word.endswith("!"):
+        last_word = last_word[0:(len_last_word-1)]
+      if len(last_word)>0:
+        results.append(last_word)
   return(results)
 
 #print(slice_and_dice(text))

@@ -9,14 +9,12 @@ Strip the trailing dot (.) and exclamation mark (!) from the word first.
   finally return the results list!
 """
 
+# def test_slice_and_dice_default_text():
+#     expected = ['objects', 'y', 'too', ':)', 'bites']
+#     assert slice_and_dice(text) == expected
 
-def test_slice_and_dice_default_text():
-    expected = ['objects', 'y', 'too', ':)', 'bites']
-    assert slice_and_dice(text) == expected
+# def test_slice_and_dice_other_text():
+    # expected = ['word', 'list', 'list']
+    # assert slice_and_dice(another_text) == expected
 
-
-def test_slice_and_dice_other_text():
-    expected = ['word', 'list', 'list']
-    assert slice_and_dice(another_text) == expected
-
-print(test_slice_and_dice_other_text())
+print(slice_and_dice(another_text))
