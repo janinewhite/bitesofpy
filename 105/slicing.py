@@ -18,16 +18,15 @@ keep enjoying our bites!
 def slice_and_dice(text: str = text) -> list:
   results = []
   words = []
+  lowercase_letters = "abcdefghijklmnopqrstuvwxyz"
   text = text.lstrip()
   for line in text.splitlines():
     lower_line = line.lower()
-    if line[0]==lower_line[0]:
+    if line[0] in lowercase_letters:
       words = line.split()
       last_word = words[len(words)-1]
-      len_word = len(last_word)
-      last_char = last_word[len_word-1]
-      if last_char=="." or last_char=="!":
-        last_word = last_word[0:(len_word-1)]
+      if last_word[-1:]=="." or last_word[-1:]=="!":
+        last_word = last_word[0:(len(last_word)-1)]
       results.append(last_word)
   return(results)
 
