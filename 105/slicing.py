@@ -18,7 +18,7 @@ keep enjoying our bites!
 def slice_and_dice(text: str = text) -> list:
   results = []
   words = []
-  text = text.ltrim()
+  text = text.lstrip()
   for line in text.splitlines():
     lower_line = line.lower()
     if line[0]==lower_line[0]:
@@ -26,8 +26,9 @@ def slice_and_dice(text: str = text) -> list:
       last_word = words[len(words)-1]
       len_word = len(last_word)
       last_char = last_word[len_word-1]
-      if last_char=="." or last_char=="":
+      if last_char=="." or last_char=="!":
         last_word = last_word[0:(len_word-2)]
       results.append(last_word)
   return(results)
 
+#print(slice_and_dice(text))
